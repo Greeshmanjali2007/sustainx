@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const defaultMaterials = [
@@ -147,9 +148,12 @@ function Marketplace() {
               <h2>Browse listings</h2>
             </div>
 
-            <a href="/post-material" className="button button-primary">
+            <Link
+              to="/post-material"
+              className="button button-primary"
+            >
               List a material
-            </a>
+            </Link>
           </div>
 
           {filteredMaterials.length > 0 ? (
@@ -167,7 +171,9 @@ function Marketplace() {
 
                   <div className="material-card-content">
                     <div className="material-card-topline">
-                      <span className="eyebrow">{material.category}</span>
+                      <span className="eyebrow">
+                        {material.category}
+                      </span>
 
                       <span className="availability-badge">
                         Available
@@ -193,12 +199,14 @@ function Marketplace() {
                       </span>
                     </div>
 
-                    <a
-                      href={`/material-details?id=${material.id || material.name}`}
+                    <Link
+                      to={`/material-details?id=${encodeURIComponent(
+                        material.id || material.name
+                      )}`}
                       className="button button-secondary"
                     >
                       View details
-                    </a>
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -206,6 +214,7 @@ function Marketplace() {
           ) : (
             <div className="empty-marketplace">
               <h3>No materials found</h3>
+
               <p>
                 Try changing your search or filters to find available
                 materials.

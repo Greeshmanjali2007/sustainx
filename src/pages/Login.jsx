@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Login() {
@@ -37,19 +38,19 @@ function Login() {
               </p>
 
               <div className="login-actions">
-                <a
-                  href="/marketplace"
+                <Link
+                  to="/marketplace"
                   className="button button-primary"
                 >
                   Browse marketplace
-                </a>
+                </Link>
 
-                <a
-                  href="/post-material"
+                <Link
+                  to="/post-material"
                   className="button button-outline"
                 >
                   List material
-                </a>
+                </Link>
               </div>
 
               <button

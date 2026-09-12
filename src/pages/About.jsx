@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function About() {
   return (
     <div className="about-page">
@@ -20,9 +22,7 @@ function About() {
             <div>
               <span className="eyebrow">Why SustainX exists</span>
 
-              <h2>
-                Surplus does not always mean waste.
-              </h2>
+              <h2>Surplus does not always mean waste.</h2>
             </div>
 
             <div className="about-copy">
@@ -113,13 +113,19 @@ function About() {
             </div>
 
             <div className="about-cta-actions">
-              <a href="/marketplace" className="button button-primary">
+              <Link
+                to="/marketplace"
+                className="button button-primary"
+              >
                 Browse marketplace
-              </a>
+              </Link>
 
-              <a href="/post-material" className="button button-outline">
+              <Link
+                to="/post-material"
+                className="button button-outline"
+              >
                 List material
-              </a>
+              </Link>
             </div>
           </div>
         </div>

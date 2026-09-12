@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const defaultMaterials = [
@@ -79,7 +80,12 @@ function MaterialDetails() {
   const [material, setMaterial] = useState(null);
 
   useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
+    const hash = window.location.hash;
+    const queryString = hash.includes("?")
+      ? hash.substring(hash.indexOf("?"))
+      : "";
+
+    const searchParams = new URLSearchParams(queryString);
     const materialId = searchParams.get("id");
 
     const savedMaterials =
@@ -110,9 +116,9 @@ function MaterialDetails() {
       <div className="material-details-page">
         <section className="material-details-section">
           <div className="container">
-            <a href="/marketplace" className="back-link">
+            <Link to="/marketplace" className="back-link">
               ← Back to marketplace
-            </a>
+            </Link>
 
             <div className="submission-success">
               <h2>Material not found</h2>
@@ -122,9 +128,9 @@ function MaterialDetails() {
                 the marketplace and choose another listing.
               </p>
 
-              <a href="/marketplace" className="button button-primary">
+              <Link to="/marketplace" className="button button-primary">
                 Browse marketplace
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -148,9 +154,9 @@ function MaterialDetails() {
     <div className="material-details-page">
       <section className="material-details-section">
         <div className="container">
-          <a href="/marketplace" className="back-link">
+          <Link to="/marketplace" className="back-link">
             ← Back to marketplace
-          </a>
+          </Link>
 
           <div className="material-details-grid">
             <div className="material-details-image">
@@ -216,4 +222,4 @@ function MaterialDetails() {
   );
 }
 
-export default MaterialDetails;;
+export default MaterialDetails;
