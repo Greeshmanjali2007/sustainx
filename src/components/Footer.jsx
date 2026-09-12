@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
     <footer className="site-footer">
@@ -14,14 +16,17 @@ function Footer() {
         </div>
 
         <div className="footer-links">
-          <a href="/">Home</a>
-          <a href="/marketplace">Marketplace</a>
-          <a href="/about">About</a>
+          <Link to="/">Home</Link>
+
+          <Link to="/marketplace">Marketplace</Link>
+
+          <Link to="/about">About</Link>
         </div>
       </div>
 
       <div className="container footer-bottom">
         <span>© 2026 SustainX</span>
+
         <span>Built for a more circular future.</span>
       </div>
     </footer>

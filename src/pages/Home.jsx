@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const featuredMaterials = [
   {
     name: "Reclaimed Red Bricks",
@@ -68,12 +70,13 @@ function Home() {
             </p>
 
             <div className="hero-actions">
-              <a className="button button-primary" href="/marketplace">
+              <Link className="button button-primary" to="/marketplace">
                 Browse materials
-              </a>
-              <a className="button button-outline" href="/post-material">
+              </Link>
+
+              <Link className="button button-outline" to="/post-material">
                 List surplus material
-              </a>
+              </Link>
             </div>
 
             <div className="hero-platform-note">
@@ -87,9 +90,14 @@ function Home() {
               src="https://images.unsplash.com/photo-1503387762-592f51f7e7d1?auto=format&fit=crop&w=1200&q=85"
               alt="Construction materials and building supplies"
             />
+
             <div className="hero-image-card">
-              <span className="hero-image-card-label">Reuse opportunity</span>
+              <span className="hero-image-card-label">
+                Reuse opportunity
+              </span>
+
               <strong>Materials ready for a second project</strong>
+
               <span className="hero-image-card-location">
                 Browse by material, condition, and location
               </span>
@@ -102,6 +110,7 @@ function Home() {
         <div className="container problem-grid">
           <div>
             <span className="eyebrow">The problem</span>
+
             <h2>Good materials are often lost between projects.</h2>
           </div>
 
@@ -111,6 +120,7 @@ function Home() {
               leave behind usable materials. At the same time, finding small
               quantities of affordable, reusable materials can be difficult.
             </p>
+
             <p>
               SustainX creates a simple connection between surplus materials
               and the people who can use them next.
@@ -124,8 +134,10 @@ function Home() {
           <div className="section-heading">
             <div>
               <span className="eyebrow">How SustainX works</span>
+
               <h2>A practical path from surplus to reuse.</h2>
             </div>
+
             <p>
               The platform makes it easier to make surplus materials visible
               and easier for others to find them.
@@ -136,7 +148,9 @@ function Home() {
             {howItWorks.map((step) => (
               <article className="work-card" key={step.number}>
                 <span className="work-number">{step.number}</span>
+
                 <h3>{step.title}</h3>
+
                 <p>{step.description}</p>
               </article>
             ))}
@@ -149,21 +163,29 @@ function Home() {
           <div className="section-heading materials-heading">
             <div>
               <span className="eyebrow">Available now</span>
+
               <h2>Materials looking for their next project.</h2>
             </div>
-            <a className="text-link" href="/marketplace">
+
+            <Link className="text-link" to="/marketplace">
               View marketplace <span>→</span>
-            </a>
+            </Link>
           </div>
 
           <div className="featured-materials-grid">
             {featuredMaterials.map((material) => (
-              <article className="featured-material-card" key={material.name}>
+              <article
+                className="featured-material-card"
+                key={material.name}
+              >
                 <img src={material.image} alt={material.name} />
 
                 <div className="featured-material-content">
                   <div className="material-card-topline">
-                    <span className="eyebrow">{material.category}</span>
+                    <span className="eyebrow">
+                      {material.category}
+                    </span>
+
                     <span className="availability-badge">
                       {material.availability}
                     </span>
@@ -176,19 +198,24 @@ function Home() {
                       <strong>Quantity</strong>
                       {material.quantity}
                     </span>
+
                     <span>
                       <strong>Condition</strong>
                       {material.condition}
                     </span>
+
                     <span>
                       <strong>Location</strong>
                       {material.location}
                     </span>
                   </div>
 
-                  <a className="material-detail-link" href="/marketplace">
+                  <Link
+                    className="material-detail-link"
+                    to="/marketplace"
+                  >
                     View material <span>→</span>
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}
@@ -199,8 +226,12 @@ function Home() {
       <section className="home-section impact-section">
         <div className="container impact-panel">
           <div className="impact-introduction">
-            <span className="eyebrow">Prototype impact dashboard</span>
+            <span className="eyebrow">
+              Prototype impact dashboard
+            </span>
+
             <h2>Make reuse visible and measurable.</h2>
+
             <p>
               SustainX is designed to track the value created when usable
               materials are redirected toward another project.
@@ -210,19 +241,25 @@ function Home() {
           <div className="impact-metrics">
             <div className="impact-metric">
               <strong>1,250 kg</strong>
+
               <span>Material diverted from waste</span>
+
               <small>Prototype value</small>
             </div>
 
             <div className="impact-metric">
               <strong>24</strong>
+
               <span>Successful reuse matches</span>
+
               <small>Prototype value</small>
             </div>
 
             <div className="impact-metric">
               <strong>3.2 tons</strong>
+
               <span>Estimated new-material demand avoided</span>
+
               <small>Prototype value</small>
             </div>
           </div>
@@ -233,16 +270,18 @@ function Home() {
         <div className="container final-cta">
           <div>
             <span className="eyebrow">Take part in the reuse loop</span>
+
             <h2>Have materials left over? Give them another use.</h2>
           </div>
 
           <div className="final-cta-actions">
-            <a className="button button-primary" href="/post-material">
+            <Link className="button button-primary" to="/post-material">
               List surplus material
-            </a>
-            <a className="button button-outline" href="/marketplace">
+            </Link>
+
+            <Link className="button button-outline" to="/marketplace">
               Browse materials
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -250,4 +289,4 @@ function Home() {
   );
 }
 
-export default Home; 
+export default Home;
